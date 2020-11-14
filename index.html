@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Display:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:400,600,700">
+
+  <title>Frontend Mentor | Insure landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    body, html{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      font-size: 16px;
+      font-family: "Karla", sans-serif;
+    }
+
+    .header-bar, .header-bar-nav{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .header-bar-nav-mobile{
+      display: none;
+    }
+
+    .header-bar{
+      width: auto;
+      justify-content: space-between;
+      padding: 0.8rem 11.5vw;
+      position: relative;
+      top: 0px;
+      z-index: 3;
+    }
+
+
+    .header-button, .info-button{
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .header-button{
+      padding: 0 1rem;
+      font-weight: 700;
+      color: hsl(273, 4%, 51%);
+    }
+
+    .header-button:hover{
+      color: black;
+    }
+
+    .info-button{
+      padding: 0.5rem 1.5rem;
+      border: 2px solid white;
+      font-weight: 400;
+      box-sizing: border-box;
+    }
+
+    .info-button:hover{
+      color: hsl(256, 26%, 20%);
+      background-color: white;
+    }
+
+    .view-plans-header{
+      border-color: black;
+      font-weight: 600;
+    }
+
+    .view-plans-header:hover{
+      color: white;
+      background-color: black;
+    }
+
+    .header-button:hover, .info-button:hover{
+      cursor: pointer;
+    }
+
+    hr.intro-hr{
+      position: absolute;
+      margin: 0 0 0 0;
+      top: 6rem;
+      left: 11.5vw;
+      width: 10vw;
+    }
+
+    h1{
+      font-family: "DM Serif Display", sans-serif;
+      font-weight: 400;
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+    }
+    .insure-intro{
+      background-color: hsl(256, 26%, 20%);
+      color: white;
+      display: flex;
+      flex-direction: row;
+      padding: 0 11.5vw;
+      align-items: center;
+      line-height: 1.5rem;
+      color: hsl(0, 0%, 98%);
+      justify-content: space-between;
+      position: relative;
+      top: 0px;
+      z-index: 1;
+
+    }
+
+    .intro-text{
+      padding-right: 2rem;
+    }
+
+    .intro-description{
+      margin-bottom: 2rem;
+    }
+    .intro-bg-container{
+      overflow: hidden;
+    }
+    .intro-bg-right{
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+    }
+    .intro-image{
+      position: relative;
+      top: 6rem;
+    }
+
+    .intro-image-mobile{
+      display: none;
+    }
+
+    .insure-body{
+      padding: 12rem 11.5vw 6rem;
+    }
+
+    .intro-bg-left{
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: -3rem;
+    }
+
+    hr.body-hr{
+      position: absolute;
+      margin: 0 0 0 0;
+      width: 10vw;
+    }
+
+    .body-header{
+      margin: 6rem 0;
+    }
+    .insure-body-wrapper{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .body-section{
+      padding: 1rem;
+      color: hsl(273, 4%, 51%);
+    }
+
+    .body-subheader{
+      font-family: "DM Serif Display", sans-serif;
+      color: black;
+      font-size: 1.5rem;
+    }
+
+    .find-out-more-wrapper{
+      background-color: hsl(256, 26%, 20%);
+      background-image: url("images/bg-pattern-intro-right-desktop.svg");
+      background-repeat: no-repeat;
+      background-position: 105% 45%;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5vw;
+      margin: 6rem 0 0;
+    }
+
+    .find-out-more{
+      max-width: 50%;
+      font-family: "DM Serif Display", sans-serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .insure-footer{
+      background-color: hsl(0, 0%, 98%);
+      padding: 0 11.5vw;
+      text-transform: uppercase;
+    }
+
+    .footer-wrapper{
+      display: flex;
+      flex-direction: row;
+    }
+    .footer-info-block{
+      flex: 1 1 0;
+      font-size: 0.9em;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .footer-block-header{
+      color: hsl(273, 4%, 51%);
+      margin: 2rem 0;
+    }
+
+    .footer-link{
+      color: hsl(256, 26%, 20%);
+    }
+    .footer-link:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 480px){
+      body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+      }
+      
+      body ~ div{
+        padding: 0 0 0 0;
+      }
+
+      h1{
+        font-size: 2.5rem;
+      }
+
+      .header-bar-nav{
+        display: none;
+      }
+
+      .header-bar-nav-mobile{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .intro-image, .intro-bg-right, .intro-bg-left, .intro-hr{
+        display: none;
+      }
+
+      .intro-text, .insure-intro, .insure-body{
+        text-align: center;
+        padding: 0;
+      }
+
+      .intro-image-mobile{
+        display: block;
+      }
+
+      hr.body-hr{
+        position: relative;
+        margin: auto;
+        top: 4rem;
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-bar">
+    <img src="images/logo.svg" alt="insure logo" style="display: inline; white-space:nowrap;">
+    <div class="header-bar-nav">
+      <span class="header-button">How we work</span>
+      <span class="header-button">Blog</span>
+      <span class="header-button">Account</span>
+      <span class="info-button view-plans-header">View plans</span>
+    </div>
+  </div>
+
+  <div class="header-bar-nav-mobile">
+    <span class="header-button">How we work</span>
+    <span class="header-button">Blog</span>
+    <span class="header-button">Account</span>
+    <span class="info-button view-plans-header">View plans</span>
+  </div>
+
+  <img class="intro-image-mobile" alt="insured family" src="images/image-intro-mobile.jpg">
+
+  <div class="insure-intro">
+    <div class="intro-text">
+      <hr class="intro-hr" style="color: white;">
+      <h1 class="intro-header" style="color: white; margin: 0;"> Humanizing your insurance. </h1>
+
+      <p class="intro-description">Get your life insurance coverage easier and faster. We blend our expertise
+        and technology to help you find the plan that’s right for you. Ensure you
+        and your loved ones are protected.</p>
+
+      <span class="info-button">View plans</span>
+    </div>
+    <img src="images/image-intro-desktop.jpg" alt="insured family" class="intro-image">
+    <div class="intro-bg-container">
+      <img src="images/bg-pattern-intro-right-desktop.svg" class="intro-bg-right">
+    </div>
+  </div>
+
+  <div class="insure-body">
+    <img src="images/bg-pattern-intro-left-desktop.svg" class="intro-bg-left">
+    <hr class="body-hr" style="color: hsl(256, 26%, 20%);">
+    <h1 class="body-header">We’re different</h1>
+
+    <div class="insure-body-wrapper">
+      <div class="body-section">
+        <img src="images/icon-snappy-process.svg" alt="Snappy Process Icon">
+        <p class="body-subheader">Snappy Process</p>
+
+        Our application process can be completed in minutes, not hours. Don’t get
+        stuck filling in tedious forms.
+      </div>
+
+      <div class="body-section">
+        <img src="images/icon-affordable-prices.svg" alt="Affordable Prices Icon">
+        <p class="body-subheader">Affordable Prices</p>
+
+        We don’t want you worrying about high monthly costs. Our prices may be low,
+        but we still offer the best coverage possible.
+      </div>
+
+      <div class="body-section">
+        <img src="images/icon-people-first.svg" alt="People First Icon">
+        <p class="body-subheader">People First</p>
+
+        Our plans aren’t full of conditions and clauses to prevent payouts. We make
+        sure you’re covered when you need it.
+      </div>
+    </div>
+
+    <div class="find-out-more-wrapper">
+      <p class="find-out-more">Find out more about how we work</p>
+      <span class="info-button">How we work</span>
+    </div>
+
+  </div>
+
+  <div class="insure-footer">
+    <div class="footer-header">
+    </div>
+
+    <hr style="color: hsl(273, 4%, 51%);">
+
+    <div class="footer-wrapper">
+      <div class="footer-info-block">
+        <p class="footer-block-header">Our company</p>
+
+        <p class="footer-link">How we work</p>
+        <p class="footer-link">Why Insure?</p>
+        <p class="footer-link">View plans</p>
+        <p class="footer-link">Reviews</p>
+      </div>
+
+      <div class="footer-info-block">
+        <p class="footer-block-header">Help me</p>
+
+        <p class="footer-link">FAQ</p>
+        <p class="footer-link">Terms of use</p>
+        <p class="footer-link">Privacy policy</p>
+        <p class="footer-link">Cookies</p>
+      </div>
+
+      <div class="footer-info-block">
+        <p class="footer-block-header">Contact</p>
+
+        <p class="footer-link">Sales</p>
+        <p class="footer-link">Support</p>
+        <p class="footer-link">Live chat</p>
+      </div>
+
+      <div class="footer-info-block">
+        <p class="footer-block-header">Others</p>
+
+        <p class="footer-link">Careers</p>
+        <p class="footer-link">Press</p>
+        <p class="footer-link">Licenses</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Eli Slaughter</a>.
+  </div>
+</body>
+
+</html>
